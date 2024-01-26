@@ -1,6 +1,7 @@
 package com.herokuapp.theinternet.loginpagetest;
 
 import org.testng.Assert;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.TestUtilities;
@@ -10,13 +11,14 @@ import pages.WelcomePage;
 
 public class PositiveLoginTests extends TestUtilities{
 
+	@Parameters({ "username", "password"})
 	@Test
-	public void logInTest() {
+	public void logInTest(String username, String password) {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.clickFormAuthenticationLink();
 
 		LoginPage loginPage = new LoginPage(driver);
-		loginPage.logIn("tomsmith", "SuperSecretPassword!");
+		loginPage.logIn(username, password);
 		
 		SecureAreaPage areaPage = new SecureAreaPage(driver);
 		String expectedUrl = "https://the-internet.herokuapp.com/secure";

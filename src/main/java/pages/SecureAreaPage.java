@@ -5,10 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class SecureAreaPage {
+public class SecureAreaPage extends BasePageObject{
 	
-	private WebDriver driver;
-
 	@FindBy(id = "flash")
 	WebElement flashCardMsg;
 	
@@ -17,8 +15,7 @@ public class SecureAreaPage {
 	WebElement logoutBtn;
 	
 	public SecureAreaPage(WebDriver driver) {
-		super();
-		this.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -30,8 +27,5 @@ public class SecureAreaPage {
 		return flashCardMsg.getText();
 	}
 	
-	public String getCurrentUrl() {
-		return driver.getCurrentUrl();
-	}
 
 }

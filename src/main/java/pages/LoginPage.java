@@ -1,20 +1,11 @@
 package pages;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class LoginPage {
-	
-	private WebDriver driver;
-	
-	Wait<WebDriver> wait;
+public class LoginPage extends BasePageObject{
 	
 	@FindBy(id = "username")
 	WebElement usernameInput;
@@ -30,17 +21,14 @@ public class LoginPage {
 	
 
 	public LoginPage(WebDriver driver) {
-		super();
-		this.driver = driver;
-		wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		super(driver);
 		PageFactory.initElements(driver, this);
 	}
 	
 	public void logIn(String username, String password) {
-		usernameInput.sendKeys(username);
-		passwordInput.sendKeys(password);
-		wait.until(ExpectedConditions.elementToBeClickable(logInButton));
-		logInButton.click();
+		type(usernameInput, username);
+		type(passwordInput, password);
+		click(logInButton);
 	}
 	
 	public String getFlashCardMsg() {
