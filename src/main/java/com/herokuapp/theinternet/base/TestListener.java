@@ -1,4 +1,4 @@
-package base;
+package com.herokuapp.theinternet.base;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;

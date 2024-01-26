@@ -1,4 +1,4 @@
-package pages;
+package com.herokuapp.theinternet.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

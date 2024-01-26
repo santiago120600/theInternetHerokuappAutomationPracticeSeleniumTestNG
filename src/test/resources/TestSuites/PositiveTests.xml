@@ -2,7 +2,7 @@
 
 <suite name="PositiveLoginTestSuite" verbose="1">
 	<listeners>
-		<listener class-name='base.TestListener'/>
+		<listener class-name='com.herokuapp.theinternet.base.TestListener'/>
 	</listeners>
 	<test name="PositiveLoginTest">
 		<classes>

@@ -3,7 +3,7 @@
 <suite name="NegativeLoginTestSuite" verbose="1" parallel="tests"
 	thread-count="5">
 	<listeners>
-		<listener class-name='base.TestListener' />
+		<listener class-name='com.herokuapp.theinternet.base.TestListener' />
 	</listeners>
 	<test name="NegativeUsernameTest-CH">
 		<parameter name="username" value="incorrectUsername"></parameter>

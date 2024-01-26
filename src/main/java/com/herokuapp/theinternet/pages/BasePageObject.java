@@ -1,4 +1,4 @@
-package pages;
+package com.herokuapp.theinternet.pages;
 
 import java.time.Duration;
 
