@@ -1,7 +1,6 @@
 package com.herokuapp.theinternet.loginpagetest;
 
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import base.TestUtilities;
@@ -11,8 +10,7 @@ import pages.WelcomePage;
 
 public class PositiveLoginTests extends TestUtilities{
 
-	@Parameters({ "username", "password"})
-	@Test
+	@Test(dataProvider = "positiveLoginData")
 	public void logInTest(String username, String password) {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.clickFormAuthenticationLink();
