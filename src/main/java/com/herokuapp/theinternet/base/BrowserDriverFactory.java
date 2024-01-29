@@ -2,6 +2,7 @@ package com.herokuapp.theinternet.base;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -27,7 +28,11 @@ public class BrowserDriverFactory {
 			WebDriverManager.firefoxdriver().setup();
 			driver.set(new FirefoxDriver());
 			break;
-
+			
+		case "edge":
+			WebDriverManager.edgedriver().setup();
+			driver.set(new EdgeDriver());
+			break;
 		default:
 			System.out.println("Do not know how to start: " + browser + ", starting chrome.");
 			WebDriverManager.chromedriver().setup();

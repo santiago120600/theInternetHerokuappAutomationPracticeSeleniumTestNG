@@ -1,7 +1,6 @@
 package com.herokuapp.theinternet.loginpagetest;
 
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import com.herokuapp.theinternet.base.TestUtilities;
@@ -12,8 +11,7 @@ public class NegativeLoginTests extends TestUtilities{
 
 
 
-	@Parameters({ "username", "password", "expectedMessage" })
-	@Test(priority = 1)
+	@Test(priority = 1, dataProvider = "negativeLoginData")
 	public void negativeTest(String username, String password, String expectedErrorMessage) {
 		WelcomePage welcomePage = new WelcomePage(driver);
 		welcomePage.clickFormAuthenticationLink();

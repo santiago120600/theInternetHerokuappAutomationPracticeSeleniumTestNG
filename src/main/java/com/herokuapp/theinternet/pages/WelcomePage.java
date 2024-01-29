@@ -9,7 +9,10 @@ public class WelcomePage extends BasePageObject{
 	
 	@FindBy(linkText = "Form Authentication")
 	WebElement formAuthenticationLink;
-
+	
+	@FindBy(linkText = "Checkboxes")
+	WebElement checkboxesLink;
+	
 	public WelcomePage(WebDriver driver) {
 		super(driver);
 		PageFactory.initElements(driver, this);
@@ -19,5 +22,8 @@ public class WelcomePage extends BasePageObject{
 		click(formAuthenticationLink);
 	}
 	
+	public void clickCheckboxesLink() {
+		click(checkboxesLink);
+	}
 	
 }

@@ -20,6 +20,14 @@ public class TestUtilities extends BaseTest{
 		};
 	}
 	
+	@DataProvider
+	protected static Object[][] negativeLoginData() {
+		return new Object[][] {
+			{"incorrectUsername","SuperSecretPassword!","Your username is invalid!"},
+			{"tomsmith","incorrectPassword","Your password is invalid!"}
+		};
+	}
+	
 	public static String takeScreenShot(WebDriver driver){
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String path = System.getProperty("user.dir") 
